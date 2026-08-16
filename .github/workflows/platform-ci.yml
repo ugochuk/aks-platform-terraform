@@ -36,7 +36,7 @@ jobs:
         run: terraform validate
 
       - name: Trivy IaC Scan
-        uses: aquasecurity/trivy-action@0.28.0
+        uses: aquasecurity/trivy-action@v0.33.1
         with:
           scan-type: config
           scan-ref: terraform
@@ -60,7 +60,7 @@ jobs:
         run: kubeconform -strict -summary kubernetes/*.yaml
 
       - name: Trivy Kubernetes config scan
-        uses: aquasecurity/trivy-action@0.28.0
+        uses: aquasecurity/trivy-action@v0.33.1
         with:
           scan-type: config
           scan-ref: kubernetes
