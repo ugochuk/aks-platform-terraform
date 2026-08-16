@@ -1,0 +1,12 @@
+environment = "dev"
+location    = "eastus2"
+prefix      = "rugo"
+
+vnet_address_space  = ["10.40.0.0/16"]
+aks_subnet_prefixes = ["10.40.1.0/24"]
+system_node_vm_size = "Standard_D2s_v5"
+
+tags = {
+  Owner      = "CloudPlatform"
+  CostCenter = "Portfolio"
+}
