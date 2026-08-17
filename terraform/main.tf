@@ -66,15 +66,14 @@ resource "azurerm_key_vault" "this" {
 data "azurerm_client_config" "current" {}
 
 resource "azurerm_kubernetes_cluster" "this" {
-  name                = "aks-${var.prefix}-${var.environment}"
-  location            = azurerm_resource_group.this.location
-  resource_group_name = azurerm_resource_group.this.name
-  dns_prefix          = "aks-${var.prefix}-${var.environment}"
-
-  oidc_issuer_enabled       = true
-  workload_identity_enabled = true
-  azure_policy_enabled      = true
-  local_account_disabled    = true
+  name                              = "aks-${var.prefix}-${var.environment}"
+  location                          = azurerm_resource_group.this.location
+  resource_group_name               = azurerm_resource_group.this.name
+  dns_prefix                        = "aks-${var.prefix}-${var.environment}"
+  oidc_issuer_enabled               = true
+  workload_identity_enabled         = true
+  azure_policy_enabled              = true
+  local_account_disabled            = true
   role_based_access_control_enabled = true
 
   default_node_pool {
